@@ -1,142 +1,86 @@
-body {
-  font-family: arial, sans-serif;
+function formatDate(date) {
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let dayIndex = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[dayIndex];
+
+  return `${day} ${hours}:${minutes}`;
 }
 
-h1 {
-  color: #7c7c7c;
-  font-size: 24px;
-  font-weight: 100;
-  line-height: 28px;
-  margin: 0;
+function displayWeatherCondition(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
 }
 
-ul {
-  margin: 0 0 10px;
-  padding: 0;
+function searchCity(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-li {
-  color: #7c7c7c;
-  font-size: 16px;
-  font-weight: 100;
-  height: 19px;
-  line-height: 1;
-  list-style: none;
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
 }
 
-.weather-app {
-  border: 1px solid #dadde1;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600px;
+function searchLocation(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-.weather-icon {
-  height: 64px;
-  width: 64px;
-  margin-right: 10px;
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-.temperature {
-  color: rgb(33, 33, 33);
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1;
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 66;
 }
 
-.units {
-  position: relative;
-  top: -34px;
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 19;
 }
 
-.search-form {
-  margin-bottom: 20px;
-}
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
+dateElement.innerHTML = formatDate(currentTime);
 
-body {
-  font-family: arial, sans-serif;
-}
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
 
-h1 {
-  color: #7c7c7c;
-  font-size: 24px;
-  font-weight: 100;
-  line-height: 28px;
-  margin: 0;
-}
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
-ul {
-  margin: 0 0 10px;
-  padding: 0;
-}
-
-li {
-  color: #7c7c7c;
-  font-size: 16px;
-  font-weight: 100;
-  height: 19px;
-  line-height: 1;
-  list-style: none;
-}
-
-.weather-app {
-  border: 1px solid #dadde1;
-  padding: 30px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600px;
-}
-
-.weather-icon {
-  height: 64px;
-  width: 64px;
-  margin-right: 10px;
-}
-
-.temperature {
-  color: rgb(33, 33, 33);
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.units {
-  position: relative;
-  top: -34px;
-}
-
-.search-form {
-  margin-bottom: 20px;
-}
-h6 {
-  font-size: 14px;
-}
-.daily {
-  margin: 30px 0px 30px 0px;
-}
-.sun {
-  width: 100px;
-  margin: 0px 50px 100px 100px;
-}
-.cloud {
-  width: 30px;
-}
-.today .degreetoday .degree2today {
-  opacity: 80%;
-}
-.dailydegree {
-  margin: 5px 15px;
-}
-.col-center {
-  border-radius: 4px;
-}
-.selectDay {
-  text-align: center;
-  margin: 0px 0px 0px -30px;
-}
-.selectDay:hover {
-  border: 1px solid #dee2e6;
-  background-color: #f8f9fa;
-  cursor: pointer;
-}
+searchCity("New York");
