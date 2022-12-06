@@ -140,3 +140,7 @@ h6 {
   background-color: #f8f9fa;
   cursor: pointer;
 }
+small {
+  display: block;
+  text-align: center;
+}
