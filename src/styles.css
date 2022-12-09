@@ -37,6 +37,10 @@ li {
   width: 64px;
   margin-right: 10px;
 }
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
 
 .temperature {
   color: rgb(33, 33, 33);
@@ -143,5 +147,5 @@ h6 {
 }
 small {
   display: block;
-  text-align: center;
+  text-align: left;
 }
