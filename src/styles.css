@@ -1,5 +1,6 @@
 body {
   font-family: arial, sans-serif;
+  background-color: #faf7f0;
 }
 
 h1 {
@@ -26,6 +27,7 @@ li {
 
 .weather-app {
   border: 1px solid #dadde1;
+  background-color: #bccef8;
   padding: 15px;
   margin: 20px auto;
   border-radius: 10px;
@@ -36,10 +38,6 @@ li {
   height: 64px;
   width: 64px;
   margin-right: 10px;
-}
-.weather-app-wrapper {
-  max-width: 600px;
-  margin: 30px auto;
 }
 
 .temperature {
@@ -91,6 +89,10 @@ li {
   border-radius: 10px;
   max-width: 600px;
 }
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
 
 .weather-icon {
   height: 64px;
@@ -138,14 +140,38 @@ h6 {
 .selectDay {
   text-align: center;
   margin: 0px 0px 0px -30px;
+  padding: 10px;
 }
 .selectDay:hover {
-  border: 1px solid #dee2e6;
-  background-color: #f8f9fa;
+  border: 1px solid #98a8f8;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #faf7f0;
   cursor: pointer;
-  box-shadow: 0 0 10px 1px #91b2f7;
+  box-shadow: 0 0 10px 2px #91b2f7;
 }
 small {
   display: block;
   text-align: left;
+}
+
+.btn-primary {
+  background-color: #42c2ff;
+  border-color: #42c2ff;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #faf7f0;
+  border-color: #cdfcf6;
+  color: #98a8f8;
+}
+.btn-success {
+  background-color: #cdfcf6;
+  border-color: #cdfcf6;
+  color: #98a8f8;
+}
+.btn-success:hover {
+  background-color: #faf7f0;
+  border-color: #faf7f0;
+  color: #98a8f8;
 }
