@@ -1,62 +1,6 @@
 body {
   font-family: arial, sans-serif;
   background-color: #faf7f0;
-}
-
-h1 {
-  color: #7c7c7c;
-  font-size: 24px;
-  font-weight: 100;
-  line-height: 28px;
-  margin: 0;
-}
-
-ul {
-  margin: 0 0 10px;
-  padding: 0;
-}
-
-li {
-  color: #7c7c7c;
-  font-size: 16px;
-  font-weight: 100;
-  height: 19px;
-  line-height: 1;
-  list-style: none;
-}
-
-.weather-app {
-  border: 1px solid #dadde1;
-  background-color: #bccef8;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600px;
-}
-
-.weather-icon {
-  height: 64px;
-  width: 64px;
-  margin-right: 10px;
-}
-
-.temperature {
-  color: rgb(33, 33, 33);
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.units {
-  position: relative;
-  top: -34px;
-}
-
-.search-form {
-  margin-bottom: 20px;
-}
-
-body {
   font-family: arial, sans-serif;
 }
 
@@ -67,6 +11,9 @@ h1 {
   line-height: 28px;
   margin: 0;
 }
+h6 {
+  font-size: 14px;
+}
 
 ul {
   margin: 0 0 10px;
@@ -81,9 +28,25 @@ li {
   line-height: 1;
   list-style: none;
 }
+small {
+  display: block;
+  text-align: left;
+}
+.temperature {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.search-form {
+  margin-bottom: 20px;
+  border-color: #bccef8;
+}
 
 .weather-app {
   border: 1px solid #dadde1;
+  background-color: #bccef8;
   padding: 30px;
   margin: 20px auto;
   border-radius: 10px;
@@ -100,24 +63,11 @@ li {
   margin-right: 10px;
 }
 
-.temperature {
-  color: rgb(33, 33, 33);
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1;
-}
-
 .units {
   position: relative;
   top: -34px;
 }
 
-.search-form {
-  margin-bottom: 20px;
-}
-h6 {
-  font-size: 14px;
-}
 .daily {
   margin: 30px 0px 30px 0px;
 }
@@ -150,10 +100,6 @@ h6 {
   cursor: pointer;
   box-shadow: 0 0 10px 2px #91b2f7;
 }
-small {
-  display: block;
-  text-align: left;
-}
 
 .btn-primary {
   background-color: #42c2ff;
@@ -163,7 +109,7 @@ small {
 .btn-primary:hover {
   background-color: #faf7f0;
   border-color: #cdfcf6;
-  color: #98a8f8;
+  color: black;
 }
 .btn-success {
   background-color: #cdfcf6;
@@ -171,7 +117,7 @@ small {
   color: #98a8f8;
 }
 .btn-success:hover {
-  background-color: #faf7f0;
-  border-color: #faf7f0;
-  color: #98a8f8;
+  background-color: white;
+  border-color: white;
+  color: black;
 }
