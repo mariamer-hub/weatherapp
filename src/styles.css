@@ -1,6 +1,6 @@
 body {
   font-family: arial, sans-serif;
-  background-color: #faf7f0;
+  background-color: #faf8f1;
   font-family: arial, sans-serif;
 }
 
@@ -46,7 +46,7 @@ small {
 
 .weather-app {
   border: 1px solid #dadde1;
-  background-color: #bccef8;
+  background-color: #e5ba73;
   padding: 30px;
   margin: 20px auto;
   border-radius: 10px;
@@ -93,17 +93,17 @@ small {
   padding: 10px;
 }
 .selectDay:hover {
-  border: 1px solid #98a8f8;
+  border: 1px solid #e5ba73;
   border-radius: 10px;
   padding: 5px;
-  background-color: #faf7f0;
+  background-color: #faf8f1;
   cursor: pointer;
-  box-shadow: 0 0 10px 2px #91b2f7;
+  box-shadow: 0 0 10px 2px #faeab1;
 }
 
 .btn-primary {
-  background-color: #42c2ff;
-  border-color: #42c2ff;
+  background-color: #c58940;
+  border-color: #c58940;
   color: white;
 }
 .btn-primary:hover {
@@ -112,9 +112,9 @@ small {
   color: black;
 }
 .btn-success {
-  background-color: #cdfcf6;
-  border-color: #cdfcf6;
-  color: #98a8f8;
+  background-color: #faeab1;
+  border-color: #faeab1;
+  color: brown;
 }
 .btn-success:hover {
   background-color: white;
