@@ -46,7 +46,7 @@ small {
 
 .weather-app {
   border: 1px solid #e5ba73;
-  background-color: #faeab1;
+  background: linear-gradient(to top, #c79081 0%, #dfa579 100%);
   padding: 30px;
   margin: 20px auto;
   border-radius: 10px;
